@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <meta description="" content="Mortgage calculator app" />
+
+    <link rel="stylesheet" href="./style.css" />
+
+    <title>Mortgage repayment calculator</title>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <div class="left-half">
+          <!--Adjusting form and elements-->
+          <div class="left-half-div">
+            <div class="header">
+              <h1>Mortgage Calculator</h1>
+              <p id="clear-all">Clear All</p>
+            </div>
+
+            <form class="submit-form" id="my-form">
+              <section class="mortgage-amount">
+                <label for="amount">Mortgage Amount</label>
+                <input type="text" name="amount" id="amount" class="inputs" />
+                <i class="icons">$</i>
+                <p class="amount-error errors">err</p>
+                <!--Error state for amount-->
+              </section>
+
+              <section class="term-and-rate">
+                <div class="terms">
+                  <label for="term">Mortgage Term</label>
+                  <input type="text" name="term" id="term" class="inputs" />
+                  <i class="icons">years</i>
+                  <p class="terms-error errors">err</p>
+                  <!--Error state for term-->
+                </div>
+                <div class="rates">
+                  <label for="rate">Interest Rate</label>
+                  <input type="text" name="rate" id="rate" class="inputs" />
+                  <i class="icons">%</i>
+                  <p class="rates-error errors">err</p>
+                  <!--Error state for rate-->
+                </div>
+              </section>
+
+              <section class="mortgage-types">
+                <p>Mortrage type</p>
+                <div class="repay-radio" id="repay-div">
+                  <input
+                    type="radio"
+                    name="mortgage-type"
+                    id="repayment"
+                    value="repayment"
+                  />
+                  <label for="repayment">Repayment</label>
+                </div>
+                <div class="interest-radio" id="interst-div">
+                  <input
+                    type="radio"
+                    name="mortgage-type"
+                    id="interest"
+                    value="interest"
+                  />
+                  <label for="interest">Interest Only</label>
+                </div>
+                <p class="radiobox-error" id="radioError"></p>
+                <!--Error state for radioboxes-->
+              </section>
+
+              <button class="submit" id="button">
+                <img
+                  src="./images/icon-calculator.svg"
+                  alt="Calculator's icon in button in main page"
+                  class="button-calc"
+                />Calculate Repayments
+              </button>
+            </form>
+          </div>
+        </div>
+        <!-- Empty results start -->
+        <div class="right-half" id="right-half-start">
+          <img
+            src="./images/illustration-empty.svg"
+            alt="Illustration empty calculator in main page"
+          />
+          <h1>Results shown here</h1>
+          <p class="p-results">
+            Complete the form and click “calculate repayments” to see what your
+            monthly repayments would be.
+          </p>
+        </div>
+        <!-- Empty results end -->
+
+        <!--Hidden results-->
+        <div class="right-half" id="right-half-hidden" style="display: none">
+          <h2>Your results</h2>
+          <p>
+            Your results are shown below based on the information you provided.
+            To adjust the results, edit the form and click "calculate repayment"
+            again.
+          </p>
+          <div class="generated">
+            <h3>Your monthly repayments</h3>
+            <p id="generated-month"></p>
+            <hr />
+            <p>Total you'll repay over the term</p>
+            <p id="generated-total"></p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>
